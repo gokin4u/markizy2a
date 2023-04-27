@@ -1,7 +1,4 @@
-import { useState } from 'react'
 import Configurator from './Configurator'
-
-import './App.css'
 
 function App() {
 

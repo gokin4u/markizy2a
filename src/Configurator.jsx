@@ -1,106 +1,176 @@
 import React, { useState, useEffect } from "react";
-import { Dropdown } from 'primereact/dropdown';
-import { Images } from "./Images";
 import './Configurator.css';
+import { category, models, colors, fabric, dimensions } from "./Products";
 
-const kasety = [
-    { name: 'Pełna', index: 0 },
-    { name: 'półkaseta', index: 1 },
-];
-const model1 = [
-    { name: 'Moderno', index: 0 },
-    { name: 'Presto', index: 1 },
-];
-
-const model2 = [
-    { name: 'Agadio', index: 2 },
-    { name: 'Tremolo', index: 3 },
-]
-
-const tkaniny = [
-    { name: 'Wełna', index: 0 },
-    { name: 'Welur', index: 1 },
-]
 
 export default function Configurator() {
 
-    const [image, setImage] = useState(Images[0])
+    const [selectedCategory, setCategory] = useState(1)
+    const [selectedModel, setModel] = useState(1)
+    const [selectedColor, setColor] = useState(1)
+    const [selectedFabric, setFabric] = useState(1)
+    //tutaj ustawiamy domyslne foto jakby nie wskoczylo inne
+    const [image, setImage] = useState('./default.jpg')
 
-    useEffect(() => { }, [image])
+    const renderCategories = (categories) => {
 
-    const [indexes, setIndexes] = useState({
-        kaseta: 0,
-        model: null,
-        tkanina: 0
-    });
-    const [kaseta, setKaseta] = useState(null);
-    const [models1, setModels1] = useState(null);
-    const [models2, setModels2] = useState(null);
-    const [tkanina, setTkanina] = useState(null);
+        return categories.map((cat) => {
+            const classes = selectedCategory === cat.id ? 'category-btn selected' : 'category-btn'
+            return (
 
+                <div key={cat.id} onClick={() => setCategory(cat.id)} className={classes}>
+                    {cat.name}
+                </div>
+            )
+        });
+    };
 
-    const handleKaseta = (e) => {
-        setKaseta(e.value);
-        setIndexes({ ...indexes, kaseta: e.value.index })
+    const renderModel = (models) => {
+        const selected = models.filter(item => item.categoryId === selectedCategory)
+
+        return selected.map(model => {
+            const classes = model.id === selectedModel ? 'model-ico selected' : 'model-ico'
+            return (
+                <div key={model.id} onClick={() => setModel(model.id)} className={classes}
+                    style={{
+                        backgroundImage: `url(${model.bgImg})`
+                    }}>
+                    {model.name}
+                </div >
+            )
+        })
     }
 
-    const handleModel = (e) => {
-        e.value.index < 2 ? setModels1(e.value) : setModels2(e.value)
-        setIndexes({ ...indexes, model: e.value.index })
-        if (tkanina !== null) {
-            setNewImage(e.value.index)
+    const renderColors = (colors) => {
+        const model = models.find(product => product.id === selectedModel)
+        const modelColors = colors.filter(color => model.colorsIds.includes(color.id))
+
+        return modelColors.map(color => {
+            const classes = color.id === selectedColor ? 'color-ico selected' : 'color-ico'
+            return (
+                <div key={color.id} onClick={() => setColor(color.id)} className={classes}
+                    style={{
+                        background: color.code, color: color.font
+                    }}>
+                    {color.name}
+                </div >
+            )
+        })
+
+    }
+
+    const renderFabric = (fabric) => {
+
+        return fabric.map((fab) => {
+            const classes = selectedFabric === fab.id ? 'fabric-btn selected' : 'fabric-btn'
+            return (
+                <div key={fab.id} onClick={() => setFabric(fab.id)} className={classes}>
+                    {fab.name}
+                </div>
+            )
+        });
+    }
+
+    const renderWidthRadio = (values) => {
+        const model = models.find(product => product.id === selectedModel)
+        const modelHeights = values.find(value => value.productId === model.id)
+
+        return (
+            <form>
+                {modelHeights.width.map(width => (
+                    <div key={width}>
+                        <input type="radio" id={width} name="width" value={width} />
+                        <label htmlFor="width">{width + ' cm'}</label><br />
+                    </div >
+                ))}
+
+            </form>
+        );
+    }
+
+    const renderRangeRadio = (values) => {
+        const model = models.find(product => product.id === selectedModel)
+        const modelHeights = values.find(value => value.productId === model.id)
+
+        return (
+            <form>
+                {modelHeights.range.map(rng => (
+                    <div key={rng}>
+                        <input type="radio" id={rng} name="range" value={rng} />
+                        <label htmlFor="range">{rng + ' cm'}</label><br />
+                    </div >
+                ))}
+
+            </form>
+        );
+    }
+
+    const handleImageChange = (modelId, colorId = null, fabricId = null) => {
+        const { name, colorsIds } = models.find(model => model.id === modelId)
+        let color = colorId || selectedColor
+
+        if (colorsIds.indexOf(color) === -1) {
+            color = colorsIds[0]
         }
+        const fabric = fabricId || selectedFabric
+        const newImgUrl = name + '-' + color + '-' + fabric + '.jpg'
+        console.log(newImgUrl + '  ...zdjecie o takiej nazwie jest potrzebne jesli sie nie wyswietla')
+
+        setImage('./' + newImgUrl)
     }
 
-    const handleTkanina = (e) => {
-        setTkanina(e.value)
-        setIndexes({ ...indexes, tkanina: e.value.index })
-        setNewImage()
-    }
+    // zmiana zdjecia przy wykryciu zmiany inncyh parametrow
+    useEffect(() => {
+        handleImageChange(selectedModel)
+    }, [selectedModel, selectedColor, selectedFabric])
 
-    const setNewImage = (index = null) => {
-
-        if (indexes.model !== null && index === null) {
-            setImage(Images[indexes.model + 1])
-        } else {
-            setImage(Images[index + 1])
-        }
-    }
-
+    // renderowany na froncie html
     return (
         <div className="container">
             <div className="buttons">
                 <div className="select-row">
                     <h3>Kaseta</h3>
-                    <div className="card flex justify-content-center">
-                        <Dropdown value={kaseta} onChange={(e) => handleKaseta(e)} options={kasety} optionLabel="name"
-                            className="w-full md:w-14rem" placeholder="wybierz kasetę" />
+                    <div className="categories">
+                        {renderCategories(category)}
                     </div>
+
                 </div>
                 <div className="select-row">
                     <h3>Model</h3>
-                    {indexes.kaseta === 0 ?
-                        <div className="card flex justify-content-center">
-                            <Dropdown value={models1} onChange={(e) => handleModel(e)} options={model1} optionLabel="name"
-                                className="w-full md:w-14rem" placeholder="Wybierz model" />
-                        </div>
-                        :
-                        <div className="card flex justify-content-center">
-                            <Dropdown value={models2} onChange={(e) => handleModel(e)} options={model2} optionLabel="name"
-                                className="w-full md:w-14rem" placeholder="Wybierz model" />
-                        </div>
-                    }
+                    <div className="models">
+                        {renderModel(models)}
+                    </div>
+                </div>
+                <div className="select-row">
+                    <h3>Kolor konstrukcji</h3>
+                    <div className="colors-palet">
+                        {renderColors(colors)}
+                    </div>
+
                 </div>
                 <div className="select-row">
                     <h3>Tkanina</h3>
-                    <div className="card flex justify-content-center">
-                        <Dropdown value={tkanina} onChange={(e) => handleTkanina(e)} options={tkaniny} optionLabel="name"
-                            className="w-full md:w-14rem" placeholder="Wybierz tkaninę" disabled={models2 === null && models1 === null ? true : false} />
+                    <div className="categories">
+                        {renderFabric(fabric)}
+                    </div>
+                </div>
+                <div className="select-row">
+                    <h3>Wymiary</h3>
+                    <div className="dimensions">
+                        <div className="width">
+                            <h4>Szerokość</h4>
+                            {renderWidthRadio(dimensions)}
+                        </div>
+                        <div className="range">
+                            <h4>Wysięg</h4>
+                            {renderRangeRadio(dimensions)}
+                        </div>
+
                     </div>
                 </div>
             </div>
             <div className="picture">
-                <img src={'.' + image} alt="obraz produktu" />
+                <img src={image} alt="markiza" />
             </div>
         </div>
     )
