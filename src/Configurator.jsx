@@ -124,8 +124,7 @@ export default function Configurator() {
     useEffect(() => {
         NProgress.set(0.0);
         handleImageChange(selectedModel)
-
-        return () => { NProgress.set(1.0) }
+        NProgress.set(1.0)
     }, [selectedModel, selectedColor, selectedFabric])
 
     // renderowany na froncie html

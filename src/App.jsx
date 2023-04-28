@@ -6,8 +6,8 @@ function App() {
 
   //loading indicator
   useEffect(() => {
-    NProgress.set(0.0);
-    return () => { NProgress.set(1.0) }
+    NProgress.start();
+    NProgress.done()
   }, [])
 
   return (
