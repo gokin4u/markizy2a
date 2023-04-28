@@ -7,10 +7,43 @@ export const category = [
 /* bgImg to sciezki do zdjec umieszczonych w folderze public, po wywołaniu npm run build, fotki lądują w folderze dist,
 w folderze public trzeba tez wrzucic fotki wariantow takich jak Moderno-1-1.jpg*/
 export const models = [
-    { name: 'Moderno', id: 1, categoryId: 1, price: 100, bgImg: 'moderno.jpg', colorsIds: [3, 4] },
-    { name: 'Presto', id: 2, categoryId: 1, price: 150, bgImg: 'presto.jpg', colorsIds: [1, 2] },
-    { name: 'Agadio', id: 3, categoryId: 2, price: 120, bgImg: 'adagio.jpg', colorsIds: [1, 2, 3] },
-    { name: 'Tremolo', id: 4, categoryId: 2, price: 200, bgImg: 'tremolo.jpg', colorsIds: [1, 2, 3, 4] },
+    {
+        name: 'Moderno',
+        id: 1,
+        categoryId: 1,
+        price: 100,
+        bgImg: 'moderno.jpg',
+        colorsIds: [3, 4],
+        desc: 'Ekran markizy wykonany jest z odpornego na UV i przedarcia poliestru. Kaseta powinna być instalowana na drewnianym słupku w pozycji pionowej-  markiza jest wyciągana z kasety. Szerokość można regulować od 0 do 300cm. W przesyłce znajdują się akcesoria montażowe'
+    },
+    {
+        name: 'Presto',
+        id: 2,
+        categoryId: 1,
+        price: 150,
+        bgImg: 'presto.jpg',
+        colorsIds: [1, 2],
+
+        desc: 'Ekran markizy wykonany jest z odpornego na UV i przedarcia poliestru. Kaseta powinna być instalowana na drewnianym słupku w pozycji pionowej-  markiza jest wyciągana z kasety. Szerokość można regulować od 0 do 300cm. W przesyłce znajdują się akcesoria montażowe'
+    },
+    {
+        name: 'Agadio',
+        id: 3,
+        categoryId: 2,
+        price: 120,
+        bgImg: 'adagio.jpg',
+        colorsIds: [1, 2, 3],
+        desc: 'Markiza jest wyciągana z kasety. Szerokość można regulować od 0 do 300cm. W przesyłce znajdują się akcesoria montażowe'
+    },
+    {
+        name: 'Tremolo',
+        id: 4,
+        categoryId: 2,
+        price: 200,
+        bgImg: 'tremolo.jpg',
+        colorsIds: [1, 2, 3, 4],
+        desc: 'Ekran markizy wykonany jest z odpornego na UV i przedarcia poliestru. Kaseta powinna być instalowana na drewnianym słupku w pozycji pionowej'
+    },
 ]
 
 // jak dodajesz nowy kolor np. o id 5 wrzuc potem do models.colorsIds[5]

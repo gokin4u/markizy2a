@@ -15,8 +15,9 @@ h4 {
 
 .container .picture {
     border-left: 2px solid darkgray;
-    align-items: center;
+    justify-content: center;
     display: flex;
+    flex-direction: column;
 }
 
 .container .picture img {
@@ -104,4 +105,11 @@ h4 {
 .color-ico.selected,
 .fabric-btn.selected {
     box-shadow: 0px 0px 6px rgb(160, 39, 39);
+}
+
+.selected-model-desc {
+    font-size: 1rem;
+    padding: .5rem 1rem;
+    color: black;
+    font-weight: 600;
 }

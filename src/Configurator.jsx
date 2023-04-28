@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import './Configurator.css';
 import { category, models, colors, fabric, dimensions } from "./Products";
+import NProgress from 'nprogress';
 
 
 export default function Configurator() {
@@ -121,7 +122,10 @@ export default function Configurator() {
 
     // zmiana zdjecia przy wykryciu zmiany inncyh parametrow
     useEffect(() => {
+        NProgress.set(0.0);
         handleImageChange(selectedModel)
+
+        return () => { NProgress.set(1.0) }
     }, [selectedModel, selectedColor, selectedFabric])
 
     // renderowany na froncie html
@@ -171,6 +175,7 @@ export default function Configurator() {
             </div>
             <div className="picture">
                 <img src={image} alt="markiza" />
+                <p className="selected-model-desc">{models[selectedModel - 1].desc}</p>
             </div>
         </div>
     )
