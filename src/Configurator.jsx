@@ -132,7 +132,7 @@ export default function Configurator() {
         <div className="container">
             <div className="buttons">
                 <div className="select-row">
-                    <h3>Kaseta</h3>
+                    <h3>2Kaseta</h3>
                     <div className="categories">
                         {renderCategories(category)}
                     </div>
