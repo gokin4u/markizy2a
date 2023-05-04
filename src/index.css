@@ -1,11 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+
 :root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  font-family: 'Inter', sans-serif;
   line-height: 1.5;
   font-weight: 400;
-
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
+  color: #616376;
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -16,7 +15,7 @@
 
 a {
   font-weight: 500;
-  color: #646cff;
+  color: #616376;
   text-decoration: inherit;
 }
 
@@ -29,7 +28,7 @@ body {
   display: flex;
   min-width: 320px;
   min-height: 100vh;
-  background-image: linear-gradient(#ECFFFE, #7F9694);
+  background: #FAFAFA;
 }
 
 
@@ -40,10 +39,11 @@ body {
 }
 
 h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
-  font-weight: 700;
-  color: black;
+  font-size: 2em;
+  line-height: 1;
+  font-weight: 600;
+  color: #616376;
+  text-transform: uppercase;
 }
 
 #nprogress {
@@ -51,13 +51,13 @@ h1 {
 }
 
 #nprogress .bar {
-  background: #29d;
+  background: #616376;
   position: fixed;
   z-index: 1031;
   top: 0;
   left: 0;
   width: 100%;
-  height: 2px;
+  height: 4px;
 }
 
 /* Fancy blur effect */
