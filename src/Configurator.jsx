@@ -138,7 +138,7 @@ export default function Configurator() {
                 <div className="select-row">
                     <div className="title">
                         <img src={Type} alt="ikona typu kasety" />
-                        <h3>Kaseta2</h3>
+                        <h3>Kaseta</h3>
                     </div>
 
                     <div className="categories">

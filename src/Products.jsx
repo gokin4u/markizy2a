@@ -41,17 +41,18 @@ export const models = [
         categoryId: 2,
         price: 200,
         bgImg: 'tremolo.jpg',
-        colorsIds: [1, 2, 3, 4],
+        colorsIds: [1, 2, 3, 4, 5],
         desc: 'Ekran markizy wykonany jest z odpornego na UV i przedarcia poliestru. Kaseta powinna być instalowana na drewnianym słupku w pozycji pionowej'
     },
 ]
 
 // jak dodajesz nowy kolor np. o id 5 wrzuc potem do models.colorsIds[5]
 export const colors = [
-    { name: 'czarny', id: 1, code: '#fff', font: '#616376' },
-    { name: 'biały', id: 2, code: '#000', font: '#fff' },
-    { name: 'brązowy', id: 3, code: '#ccc', font: '#616376' },
-    { name: 'antracyt struktura', id: 4, code: '#ffd', font: '#616376' },
+    { name: 'RAL 9006', id: 1, code: '#fff', font: '#616376' },
+    { name: 'RAL 8019', id: 2, code: '#000', font: '#fff' },
+    { name: 'RAL 7016S', id: 3, code: '#ccc', font: '#616376' },
+    { name: 'RAL 9016', id: 4, code: '#ffd', font: '#616376' },
+    { name: 'RAL 9005', id: 5, code: '#ffd', font: '#616376' },
 ]
 
 export const fabric = [
