@@ -48,10 +48,10 @@ export const models = [
 
 // jak dodajesz nowy kolor np. o id 5 wrzuc potem do models.colorsIds[5]
 export const colors = [
-    { name: 'czarny', id: 1, code: '#fff', font: '#000' },
+    { name: 'czarny', id: 1, code: '#fff', font: '#616376' },
     { name: 'biały', id: 2, code: '#000', font: '#fff' },
-    { name: 'brązowy', id: 3, code: '#ccc', font: '#000' },
-    { name: 'antracyt struktura', id: 4, code: '#ffd', font: '#000' },
+    { name: 'brązowy', id: 3, code: '#ccc', font: '#616376' },
+    { name: 'antracyt struktura', id: 4, code: '#ffd', font: '#616376' },
 ]
 
 export const fabric = [

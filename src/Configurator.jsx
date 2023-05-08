@@ -2,7 +2,11 @@ import React, { useState, useEffect } from "react";
 import './Configurator.css';
 import { category, models, colors, fabric, dimensions } from "./Products";
 import NProgress from 'nprogress';
-
+import Type from './imgs/type.png'
+import Model from './imgs/model.png'
+import Color from './imgs/color.png'
+import Fabric from './imgs/fabric.png'
+import Ruler from './imgs/ruler.png'
 
 export default function Configurator() {
 
@@ -132,33 +136,49 @@ export default function Configurator() {
         <div className="container">
             <div className="buttons">
                 <div className="select-row">
-                    <h3>Kaseta</h3>
+                    <div className="title">
+                        <img src={Type} alt="ikona typu kasety" />
+                        <h3>Kaseta</h3>
+                    </div>
+
                     <div className="categories">
                         {renderCategories(category)}
                     </div>
 
                 </div>
                 <div className="select-row">
-                    <h3>Model</h3>
+                    <div className="title">
+                        <img src={Model} alt="ikona typu kasety" />
+                        <h3>Model</h3>
+                    </div>
                     <div className="models">
                         {renderModel(models)}
                     </div>
                 </div>
                 <div className="select-row">
-                    <h3>Kolor konstrukcji</h3>
+                    <div className="title">
+                        <img src={Color} alt="ikona typu kasety" />
+                        <h3>Kolor konstrukcji</h3>
+                    </div>
                     <div className="colors-palet">
                         {renderColors(colors)}
                     </div>
 
                 </div>
                 <div className="select-row">
-                    <h3>Tkanina</h3>
+                    <div className="title">
+                        <img src={Fabric} alt="ikona typu kasety" />
+                        <h3>Tkanina</h3>
+                    </div>
                     <div className="categories">
                         {renderFabric(fabric)}
                     </div>
                 </div>
                 <div className="select-row">
-                    <h3>Wymiary</h3>
+                    <div className="title">
+                        <img src={Ruler} alt="ikona typu kasety" />
+                        <h3>Wymiary</h3>
+                    </div>
                     <div className="dimensions">
                         <div className="width">
                             <h4>Szerokość</h4>

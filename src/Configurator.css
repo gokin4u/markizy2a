@@ -6,6 +6,7 @@
 h4 {
     padding: 0;
     margin: 0;
+    font-weight: 600;
 }
 
 .container>div {
@@ -14,7 +15,7 @@ h4 {
 }
 
 .container .picture {
-    border-left: 2px solid darkgray;
+    border-left: 2px solid #eaeaea;
     justify-content: center;
     display: flex;
     flex-direction: column;
@@ -23,12 +24,25 @@ h4 {
 .container .picture img {
     width: 100%;
     height: auto;
-    border-radius: 50px;
+    border-radius: 10px;
 }
 
-.container h3 {
-    font-size: 24px;
-    color: black;
+.container .title {
+    display: flex;
+    align-items: center;
+}
+
+.container .title h3 {
+    font-size: 20px;
+    color: #616376;
+    line-height: 24px;
+    font-weight: 600;
+}
+
+.container .title img {
+    width: 26px;
+    height: 26px;
+    margin-right: .5rem;
 }
 
 .categories {
@@ -36,16 +50,20 @@ h4 {
     width: 100%;
 }
 
+.select-row {
+    padding-bottom: 1rem;
+}
+
 .categories .category-btn,
 .fabric-btn {
     padding: 25px 30px;
     margin-right: 1rem;
-    background-color: rgb(248, 248, 248);
+    background-color: white;
     border-radius: 5%;
-    color: black;
     cursor: pointer;
     min-width: 120px;
     text-align: center;
+    box-shadow: 0px 0px 6px rgba(165, 163, 174, 0.8);
 }
 
 .fabric-btn {
@@ -67,6 +85,8 @@ h4 {
     text-align: center;
     border-radius: 5%;
     cursor: pointer;
+    color: white;
+    box-shadow: 0px 0px 6px rgba(165, 163, 174, 0.8);
 }
 
 
@@ -86,9 +106,9 @@ h4 {
     text-align: center;
     cursor: pointer;
     font-size: 14px;
-    font-weight: 700;
+    font-weight: 500;
     text-transform: uppercase;
-    box-shadow: inset 1px 1px 4px white;
+    box-shadow: 0px 0px 6px rgba(165, 163, 174, 0.8);
 }
 
 .dimensions {
@@ -97,19 +117,18 @@ h4 {
 
 .dimensions>div {
     width: 50%;
-    color: black;
 }
 
 .categories .category-btn.selected,
 .model-ico.selected,
 .color-ico.selected,
 .fabric-btn.selected {
-    box-shadow: 0px 0px 6px rgb(160, 39, 39);
+    box-shadow: 0px 10px 20px rgba(165, 163, 174, 0.4);
+    transform: scale(1.01);
 }
 
 .selected-model-desc {
     font-size: 1rem;
-    padding: .5rem 1rem;
-    color: black;
-    font-weight: 600;
+    padding: .5rem 0rem;
+    font-weight: 500;
 }
