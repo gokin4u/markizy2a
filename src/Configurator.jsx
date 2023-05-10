@@ -69,13 +69,14 @@ export default function Configurator() {
         return fabric.map((fab) => {
             const classes = selectedFabric === fab.id ? 'fabric-btn selected' : 'fabric-btn'
             return (
-                <div key={fab.id} onClick={() => setFabric(fab.id)} className={classes}>
+                <div key={fab.id} onClick={() => setFabric(fab.id)} className={classes} style={{
+                    backgroundImage: `url(${fab.bgImg})`
+                }}>
                     {fab.name}
                 </div>
             )
         });
     }
-
     const renderWidthRadio = (values) => {
         const model = models.find(product => product.id === selectedModel)
         const modelHeights = values.find(value => value.productId === model.id)
@@ -137,7 +138,7 @@ export default function Configurator() {
             <div className="buttons">
                 <div className="select-row">
                     <div className="title">
-                        <img src={Type} alt="ikona typu kasety" />
+                        <img src={Type} alt="Kaseta" />
                         <h3>Kaseta</h3>
                     </div>
 
@@ -148,7 +149,7 @@ export default function Configurator() {
                 </div>
                 <div className="select-row">
                     <div className="title">
-                        <img src={Model} alt="ikona typu kasety" />
+                        <img src={Model} alt="Model" />
                         <h3>Model</h3>
                     </div>
                     <div className="models">
@@ -157,7 +158,7 @@ export default function Configurator() {
                 </div>
                 <div className="select-row">
                     <div className="title">
-                        <img src={Color} alt="ikona typu kasety" />
+                        <img src={Color} alt="Kolor konstrukcji" />
                         <h3>Kolor konstrukcji</h3>
                     </div>
                     <div className="colors-palet">
@@ -167,7 +168,7 @@ export default function Configurator() {
                 </div>
                 <div className="select-row">
                     <div className="title">
-                        <img src={Fabric} alt="ikona typu kasety" />
+                        <img src={Fabric} alt="Tkaniny" />
                         <h3>Tkanina</h3>
                     </div>
                     <div className="categories">
@@ -176,7 +177,7 @@ export default function Configurator() {
                 </div>
                 <div className="select-row">
                     <div className="title">
-                        <img src={Ruler} alt="ikona typu kasety" />
+                        <img src={Ruler} alt="Wymiary" />
                         <h3>Wymiary</h3>
                     </div>
                     <div className="dimensions">
