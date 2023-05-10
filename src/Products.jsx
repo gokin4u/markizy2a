@@ -48,17 +48,20 @@ export const models = [
 
 // jak dodajesz nowy kolor np. o id 5 wrzuc potem do models.colorsIds[5]
 export const colors = [
-    { name: 'RAL 9006', id: 1, code: '#fff', font: '#616376' },
-    { name: 'RAL 8019', id: 2, code: '#000', font: '#fff' },
-    { name: 'RAL 7016S', id: 3, code: '#ccc', font: '#616376' },
-    { name: 'RAL 9016', id: 4, code: '#ffd', font: '#616376' },
-    { name: 'RAL 9005', id: 5, code: '#ffd', font: '#616376' },
+    { name: 'RAL 9006', id: 1, code: '#999999', font: '#616376' },
+    { name: 'RAL 8019', id: 2, code: '#372722', font: '#fff' },
+    { name: 'RAL 7016S', id: 3, code: '#4c4c4b', font: '#616376' },
+    { name: 'RAL 9016', id: 4, code: '#fff', font: '#616376' },
+    { name: 'RAL 9005', id: 5, code: '#000', font: '#616376' },
 ]
 
 export const fabric = [
-    { name: 'Vegas', id: 1 },
-    { name: 'Wenecja', id: 2 },
-    { name: 'Miami', id: 3 }
+    { name: 'T-1300', id: 1 },
+    { name: 'REC-148', id: 2 },
+    { name: 'REC-122', id: 3 },
+    { name: 'REC-117', id: 4 },
+    { name: 'REC-115', id: 5 },
+    { name: 'REC-779', id: 6 }
 ]
 
 export const dimensions = [
