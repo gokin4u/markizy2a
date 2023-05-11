@@ -7,6 +7,7 @@ import Model from './imgs/model.png'
 import Color from './imgs/color.png'
 import Fabric from './imgs/fabric.png'
 import Ruler from './imgs/ruler.png'
+import { LoadingSpinner } from "./LoadingSpinner";
 
 export default function Configurator() {
 
@@ -16,6 +17,7 @@ export default function Configurator() {
     const [selectedFabric, setFabric] = useState(1)
     //tutaj ustawiamy domyslne foto jakby nie wskoczylo inne
     const [image, setImage] = useState('./default.jpg')
+    const [imageLoading, setImageLoading] = useState(true)
 
     const renderCategories = (categories) => {
 
@@ -64,9 +66,12 @@ export default function Configurator() {
 
     }
 
-    const renderFabric = (fabric) => {
+    const renderFabric = (currentFabric) => {
 
-        return fabric.map((fab) => {
+        const model = models.find(product => product.id === selectedModel)
+        const modelFabrics = currentFabric.filter(fab => model.fabrics.includes(fab.id))
+
+        return modelFabrics.map((fab) => {
             const classes = selectedFabric === fab.id ? 'fabric-btn selected' : 'fabric-btn'
             return (
                 <div key={fab.id} onClick={() => setFabric(fab.id)} className={classes} style={{
@@ -112,6 +117,7 @@ export default function Configurator() {
     }
 
     const handleImageChange = (modelId, colorId = null, fabricId = null) => {
+        setImageLoading(true)
         const { name, colorsIds } = models.find(model => model.id === modelId)
         let color = colorId || selectedColor
 
@@ -123,6 +129,7 @@ export default function Configurator() {
         console.log(newImgUrl + '  ...zdjecie o takiej nazwie jest potrzebne jesli sie nie wyswietla')
 
         setImage('./' + newImgUrl)
+        setTimeout(() => setImageLoading(false), 200)
     }
 
     // zmiana zdjecia przy wykryciu zmiany inncyh parametrow
@@ -194,7 +201,7 @@ export default function Configurator() {
                 </div>
             </div>
             <div className="picture">
-                <img src={image} alt="markiza" />
+                {imageLoading ? <LoadingSpinner /> : <img src={image} alt="markiza" />}
                 <p className="selected-model-desc">{models[selectedModel - 1].desc}</p>
             </div>
         </div>
