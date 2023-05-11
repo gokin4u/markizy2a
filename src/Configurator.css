@@ -63,7 +63,7 @@ h4 {
     cursor: pointer;
     min-width: 120px;
     text-align: center;
-    box-shadow: 0px 0px 6px rgba(165, 163, 174, 0.8);
+    border: 2px #b3b3b3 solid;
 }
 
 .fabric-btn {
@@ -126,9 +126,8 @@ h4 {
 .model-ico.selected,
 .color-ico.selected,
 .fabric-btn.selected {
-    box-shadow: 0px 0px 15px rgba(8, 0, 255, 0.37);
+    border: 2px #050080 solid;
     transform: scale(1.01);
-}
 }
 
 .selected-model-desc {

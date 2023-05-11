@@ -59,12 +59,37 @@ export const colors = [
 ]
 
 export const fabric = [
-    { name: 'T-1300', id: 1 },
-    { name: 'REC-148', id: 2 },
-    { name: 'REC-122', id: 3 },
-    { name: 'REC-117', id: 4 },
-    { name: 'REC-115', id: 5 },
-    { name: 'REC-779', id: 6 }
+    {
+        name: 'T-1300',
+        id: 1,
+        bgImg: 't-1300.jpg'
+
+    },
+    {
+        name: 'REC-148',
+        id: 2,
+        bgImg: 'rec-148.jpg'
+    },
+    {
+        name: 'REC-122',
+        id: 3,
+        bgImg: 'rec-122.jpg'
+    },
+    {
+        name: 'REC-117',
+        id: 4,
+        bgImg: 'rec-117.jpg'
+    },
+    {
+        name: 'REC-115',
+        id: 5,
+        bgImg: 'rec-115.jpg'
+    },
+    {
+        name: 'REC-779',
+        id: 6,
+        bgImg: 'rec-779.jpg'
+    }
 ]
 
 export const dimensions = [
