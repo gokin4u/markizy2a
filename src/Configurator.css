@@ -1,6 +1,6 @@
 .container {
     display: flex;
-   
+
 }
 
 h4 {
@@ -19,12 +19,14 @@ h4 {
     justify-content: center;
     display: flex;
     flex-direction: column;
+    width: 60%
 }
 
 .container .picture img {
     width: 100%;
-    height: auto;
+    max-height: 80vh;
     border-radius: 10px;
+    object-fit: cover;
 }
 
 .container .title {
@@ -95,11 +97,11 @@ h4 {
     display: flex;
 }
 
- .colors-palet .color-ico {
+.colors-palet .color-ico {
     width: 60px;
     height: 60px;
     border-radius: 50%;
-    border:  2px; solid #fff;
+    border: 2px solid #fff;
     margin-right: 1rem;
     display: flex;
     flex-wrap: nowrap;
@@ -156,4 +158,13 @@ h4 {
     opacity: 0;
     transform: translateY(-10px);
     transition: opacity 300ms, transform 300ms;
+}
+
+.spinner-1 {
+    width: 100%;
+    padding: 30vh 0;
+}
+
+.spinner-1 svg {
+    margin: 0 auto;
 }
