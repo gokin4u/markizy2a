@@ -193,7 +193,7 @@ export default function Configurator() {
                             {renderWidthRadio(dimensions)}
                         </div>
                         <div className="range">
-                            <h4>Wysięg</h4>
+                            <h4>Wysięg </h4>
                             {renderRangeRadio(dimensions)}
                         </div>
 
