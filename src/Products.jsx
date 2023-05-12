@@ -45,7 +45,7 @@ export const models = [
         price: 200,
         bgImg: 'tremolo.jpg',
         colorsIds: [1, 2, 3, 4, 5],
-        fabrics: [1, 2, 3, 4, 5, 6],
+        fabrics: [1, 2, 3, 4, 5,],
         desc: 'Ekran markizy wykonany jest z odpornego na UV i przedarcia poliestru. Kaseta powinna być instalowana na drewnianym słupku w pozycji pionowej'
     },
 ]
