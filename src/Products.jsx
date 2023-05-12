@@ -14,7 +14,7 @@ export const models = [
         price: 100,
         bgImg: 'moderno.jpg',
         colorsIds: [3, 4],
-        fabrics: [1],
+        fabrics: [1, 2, 3, 4, 5, 6],
         desc: 'Ekran markizy wykonany jest z odpornego na UV i przedarcia poliestru. Kaseta powinna być instalowana na drewnianym słupku w pozycji pionowej-  markiza jest wyciągana z kasety. Szerokość można regulować od 0 do 300cm. W przesyłce znajdują się akcesoria montażowe'
     },
     {
@@ -23,7 +23,7 @@ export const models = [
         categoryId: 1,
         price: 150,
         bgImg: 'presto.jpg',
-        fabrics: [1],
+        fabrics: [1, 2, 3, 4, 5, 6],
         colorsIds: [1, 2],
 
         desc: 'Ekran markizy wykonany jest z odpornego na UV i przedarcia poliestru. Kaseta powinna być instalowana na drewnianym słupku w pozycji pionowej-  markiza jest wyciągana z kasety. Szerokość można regulować od 0 do 300cm. W przesyłce znajdują się akcesoria montażowe'
@@ -35,7 +35,7 @@ export const models = [
         price: 120,
         bgImg: 'adagio.jpg',
         colorsIds: [1, 2, 3],
-        fabrics: [1],
+        fabrics: [1, 2, 3, 4, 5, 6],
         desc: 'Markiza jest wyciągana z kasety. Szerokość można regulować od 0 do 300cm. W przesyłce znajdują się akcesoria montażowe'
     },
     {
@@ -45,7 +45,7 @@ export const models = [
         price: 200,
         bgImg: 'tremolo.jpg',
         colorsIds: [1, 2, 3, 4, 5],
-        fabrics: [1],
+        fabrics: [1, 2, 3, 4, 5, 6],
         desc: 'Ekran markizy wykonany jest z odpornego na UV i przedarcia poliestru. Kaseta powinna być instalowana na drewnianym słupku w pozycji pionowej'
     },
 ]
